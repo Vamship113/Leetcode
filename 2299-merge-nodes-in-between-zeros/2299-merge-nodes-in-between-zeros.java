@@ -21,6 +21,7 @@ public class Solution {
             modify.next = nextSum;
             modify = modify.next;
         }
+        System.gc();
         return head.next;
     }
 }
