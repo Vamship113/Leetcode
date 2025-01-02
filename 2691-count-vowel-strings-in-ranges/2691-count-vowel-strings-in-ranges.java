@@ -15,12 +15,6 @@ class Solution {
             int end = queries[j][1];
             if(start == 0 ) 
             ans[ind++]=presum[end];
-            else if(start==end){
-                if(isValid(words[start]))
-                ans[ind++]=presum[end]-presum[end-1];
-                else
-                ans[ind++]=0;
-            }
             else
             ans[ind++]=presum[end]-presum[start-1];
         }
