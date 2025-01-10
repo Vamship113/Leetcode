@@ -26,7 +26,7 @@ class Solution {
     }
     boolean equal(int[] subset, int[] set){
         for(int i=0;i<26;i++) {
-        	if(subset[i]>set[i]) return false;
+        	if(subset[i]!=0 && subset[i]>set[i]) return false;
         }
         return true;
     }
