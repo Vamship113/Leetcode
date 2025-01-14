@@ -29,6 +29,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Simulation
 |  |
 | ------- |
+| [0258-add-digits](https://github.com/Vamship113/Leetcode/tree/master/0258-add-digits) |
 | [2232-adding-spaces-to-a-string](https://github.com/Vamship113/Leetcode/tree/master/2232-adding-spaces-to-a-string) |
 | [2299-merge-nodes-in-between-zeros](https://github.com/Vamship113/Leetcode/tree/master/2299-merge-nodes-in-between-zeros) |
 ## Database
@@ -123,4 +124,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2221-check-if-a-parentheses-string-can-be-valid](https://github.com/Vamship113/Leetcode/tree/master/2221-check-if-a-parentheses-string-can-be-valid) |
+## Math
+|  |
+| ------- |
+| [0258-add-digits](https://github.com/Vamship113/Leetcode/tree/master/0258-add-digits) |
+## Number Theory
+|  |
+| ------- |
+| [0258-add-digits](https://github.com/Vamship113/Leetcode/tree/master/0258-add-digits) |
 <!---LeetCode Topics End-->
