@@ -13,10 +13,12 @@ class Solution {
         }
         for(int i=0;i<arr.length;i++){
             int num=arr[i];
-            row_count[freq[num][0]]++;
-            if(row_count[freq[num][0]]==col) return i;
-            col_count[freq[num][1]]++;
-            if(col_count[freq[num][1]]==row) return i;
+            int r=freq[num][0];
+            int c=freq[num][1];
+            row_count[r]++;
+            if(row_count[r]==col) return i;
+            col_count[c]++;
+            if(col_count[c]==row) return i;
         }
         
         return -1;
