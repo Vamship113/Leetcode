@@ -10,10 +10,10 @@ class Solution {
             }
         }
 
-        for(Integer key:map.keySet()){
-            Integer value=map.get(key);
-            if(value>1) 
-            n_tuples+=((value*(value-1)/2)*8);
+        for (int value : map.values()) {
+            if (value > 1) {
+                n_tuples += (value * (value - 1) / 2) * 8;
+            }
         }
         return n_tuples;
     }
