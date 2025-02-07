@@ -1,20 +1,25 @@
 class Solution {
     public int[] queryResults(int limit, int[][] queries) {
-        Map<Integer,Integer> ball = new HashMap<>(), color = new HashMap<>();
-        int n = queries.length, distinct = 0;
-        int[] ans = new int[n];
-        for (int i = 0; i < n; i++){
-            int pos = queries[i][0], c = queries[i][1];
-            if(ball.containsKey(pos)){
-                int cnt = color.get(ball.get(pos)) - 1;
-                if(cnt == 0){ color.remove(ball.get(pos)); distinct--; }
-                else color.put(ball.get(pos), cnt);
+        Map<Integer,Integer> node = new HashMap<>();
+        Map<Integer,Integer> color = new HashMap<>();
+        int ans[]=new int[queries.length];
+        for(int i=0;i<queries.length;i++){
+            int it[]=queries[i];
+            if(node.containsKey(it[0])){
+                if(node.get(it[0])==it[1]) {
+                    ans[i]=color.size();continue;
+                }
+                else if (color.get(node.get(it[0]))<=1) color.remove(node.get(it[0]));
+                else
+                color.put(node.get(it[0]),color.get(node.get(it[0]))-1);
+                node.put(it[0],it[1]);
+                color.put(it[1],color.getOrDefault(it[1],0)+1);
             }
-            ball.put(pos, c);
-            int cnt = color.getOrDefault(c, 0) + 1;
-            color.put(c, cnt);
-            if(cnt == 1) distinct++;
-            ans[i] = distinct;
+            else{
+                node.put(it[0],it[1]);
+                color.put(it[1],color.getOrDefault(it[1],0)+1);
+            }
+            ans[i]=color.size();
         }
         return ans;
     }
