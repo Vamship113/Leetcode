@@ -4,19 +4,13 @@ class Solution {
         for(int num: nums)
         minHeap.add((long)num);
         int n=nums.length;
-        int count=0;
-        while(!minHeap.isEmpty()){
-            long x=minHeap.poll();
-            if(minHeap.isEmpty()) return count;
-            long y=minHeap.poll();
-            if(x>=k && y>=k) return count;
-            else{
-                long new_var =Math.min(x,y)*2+Math.max(x,y);
-                //System.out.println(x+" "+y+" "+new_var);
-                minHeap.add(new_var);
-                count++;
-            }
+        int numOperations=0;
+        while (minHeap.peek() < k) {
+            long x = minHeap.remove();
+            long y = minHeap.remove();
+            minHeap.add(Math.min(x, y) * 2 + Math.max(x, y));
+            numOperations++;
         }
-        return count;
+        return numOperations;
     }
 }
