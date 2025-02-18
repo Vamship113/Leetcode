@@ -1,22 +1,28 @@
 class Solution {
-
     public String smallestNumber(String pattern) {
-        StringBuilder result = new StringBuilder();
-        Stack<Integer> numStack = new Stack<>();
-
-        // Iterate through the pattern
-        for (int index = 0; index <= pattern.length(); index++) {
-            // Push the next number onto the stack
-            numStack.push(index + 1);
-
-            // If 'I' is encountered or we reach the end, pop all stack elements
-            if (index == pattern.length() || pattern.charAt(index) == 'I') {
-                while (!numStack.isEmpty()) {
-                    result.append(numStack.pop());
-                }
+        Stack<Integer> stack = new Stack<>();
+        StringBuilder sb=new StringBuilder();
+        int n=pattern.length();
+        int start=1;
+        int last=n+1;
+        int i=0;
+        while(i<n){
+            char c= pattern.charAt(i);
+            if(c=='I')
+            {
+            sb.append(start++);
+            while(!stack.isEmpty()){
+                sb.append(stack.pop());
+            }}
+            else{
+                stack.push(start++);
             }
+            i++;
         }
-
-        return result.toString();
+        sb.append(start++);
+        while(!stack.isEmpty()){
+                sb.append(stack.pop());
+        }
+        return sb.toString();
     }
 }
