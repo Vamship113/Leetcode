@@ -13,58 +13,49 @@
  *     }
  * }
  */
-public class Solution {
+class Solution {
+    private String s;
+    private int idx, level;
 
-    public TreeNode recoverFromPreorder(String traversal) {
-        Stack<TreeNode> stack = new Stack<>();
-        int index = 0;
+    public TreeNode recoverFromPreorder(final String traversal) {
+        this.s = traversal;
+        this.idx = 0;
+        this.level = 0;
 
-        while (index < traversal.length()) {
-            // Count the number of dashes
-            int depth = 0;
-            while (
-                index < traversal.length() && traversal.charAt(index) == '-'
-            ) {
-                depth++;
-                index++;
+        TreeNode node = new TreeNode(-1);
+
+        this.helper(node, 0);
+
+        return node.left;
+    }
+
+    private void helper(final TreeNode parent, final int lvl) {
+        while(this.idx < this.s.length() && lvl == level) {
+            int num = 0;
+
+            // Get value
+            while(this.idx < this.s.length() && Character.isDigit(this.s.charAt(this.idx))) {
+                num *= 10;
+                num += this.s.charAt(this.idx++) - '0';
             }
 
-            // Extract the node value
-            int value = 0;
-            while (
-                index < traversal.length() &&
-                Character.isDigit(traversal.charAt(index))
-            ) {
-                value = value * 10 + (traversal.charAt(index) - '0');
-                index++;
+            // Add child
+            final TreeNode node = new TreeNode(num);
+
+            if(parent.left == null)
+                parent.left = node;
+            else
+                parent.right = node;
+
+            this.level = 0;
+
+            // Get next level
+            while(this.idx < this.s.length() && this.s.charAt(this.idx) == '-') {
+                this.level++;
+                this.idx++;
             }
 
-            // Create the current node
-            TreeNode node = new TreeNode(value);
-
-            // Adjust the stack to the correct depth
-            while (stack.size() > depth) {
-                stack.pop();
-            }
-
-            // Attach the node to the parent
-            if (!stack.empty()) {
-                if (stack.peek().left == null) {
-                    stack.peek().left = node;
-                } else {
-                    stack.peek().right = node;
-                }
-            }
-
-            // Push the current node onto the stack
-            stack.push(node);
+            this.helper(node, lvl + 1);
         }
-
-        // The root is the first node in the stack
-        while (stack.size() > 1) {
-            stack.pop();
-        }
-
-        return stack.peek();
     }
 }
