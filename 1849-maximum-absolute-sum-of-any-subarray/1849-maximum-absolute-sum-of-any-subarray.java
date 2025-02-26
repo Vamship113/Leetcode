@@ -1,16 +1,11 @@
 class Solution {
-
     public int maxAbsoluteSum(int[] nums) {
-        int minPrefixSum = 0, maxPrefixSum = 0;
-        int prefixSum = 0;
-
-        for (int i = 0; i < nums.length; i++) {
-            prefixSum += nums[i];
-
-            minPrefixSum = Math.min(minPrefixSum, prefixSum);
-            maxPrefixSum = Math.max(maxPrefixSum, prefixSum);
+        int sum = 0, minSum = 0, maxSum = 0;
+        for (int num : nums) {
+            sum += num;
+            if (sum > maxSum) maxSum = sum;
+            if (sum < minSum) minSum = sum;
         }
-
-        return maxPrefixSum - minPrefixSum;
+        return Math.abs(maxSum - minSum);
     }
 }
