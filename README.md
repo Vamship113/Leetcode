@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [0053-maximum-subarray](https://github.com/Vamship113/Leetcode/tree/master/0053-maximum-subarray) |
 | [0120-triangle](https://github.com/Vamship113/Leetcode/tree/master/0120-triangle) |
 | [0407-trapping-rain-water-ii](https://github.com/Vamship113/Leetcode/tree/master/0407-trapping-rain-water-ii) |
 | [0854-making-a-large-island](https://github.com/Vamship113/Leetcode/tree/master/0854-making-a-large-island) |
@@ -47,6 +48,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Dynamic Programming
 |  |
 | ------- |
+| [0053-maximum-subarray](https://github.com/Vamship113/Leetcode/tree/master/0053-maximum-subarray) |
 | [0120-triangle](https://github.com/Vamship113/Leetcode/tree/master/0120-triangle) |
 | [1631-number-of-sub-arrays-with-odd-sum](https://github.com/Vamship113/Leetcode/tree/master/1631-number-of-sub-arrays-with-odd-sum) |
 ## Linked List
@@ -317,5 +319,6 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Divide and Conquer
 |  |
 | ------- |
+| [0053-maximum-subarray](https://github.com/Vamship113/Leetcode/tree/master/0053-maximum-subarray) |
 | [0925-construct-binary-tree-from-preorder-and-postorder-traversal](https://github.com/Vamship113/Leetcode/tree/master/0925-construct-binary-tree-from-preorder-and-postorder-traversal) |
 <!---LeetCode Topics End-->
