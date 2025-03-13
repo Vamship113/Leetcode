@@ -8,11 +8,10 @@ class Solution {
             line[start]+=1;
             line[end+1]-=1;
         }
-        for(int i=1;i<n;i++){
-            line[i]+=line[i-1];
-        }
+        int op=0;
         for(int i=0;i<n;i++){
-            if(nums[i]>line[i]) return false;
+            op+=line[i];
+            if(op<nums[i]) return false;
         }
         return true;
     }
