@@ -11,6 +11,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0407-trapping-rain-water-ii](https://github.com/Vamship113/Leetcode/tree/master/0407-trapping-rain-water-ii) |
 | [0854-making-a-large-island](https://github.com/Vamship113/Leetcode/tree/master/0854-making-a-large-island) |
 | [0905-length-of-longest-fibonacci-subsequence](https://github.com/Vamship113/Leetcode/tree/master/0905-length-of-longest-fibonacci-subsequence) |
+| [0907-koko-eating-bananas](https://github.com/Vamship113/Leetcode/tree/master/0907-koko-eating-bananas) |
 | [0925-construct-binary-tree-from-preorder-and-postorder-traversal](https://github.com/Vamship113/Leetcode/tree/master/0925-construct-binary-tree-from-preorder-and-postorder-traversal) |
 | [0952-word-subsets](https://github.com/Vamship113/Leetcode/tree/master/0952-word-subsets) |
 | [1335-maximum-candies-allocated-to-k-children](https://github.com/Vamship113/Leetcode/tree/master/1335-maximum-candies-allocated-to-k-children) |
@@ -118,6 +119,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Binary Search
 |  |
 | ------- |
+| [0907-koko-eating-bananas](https://github.com/Vamship113/Leetcode/tree/master/0907-koko-eating-bananas) |
 | [1335-maximum-candies-allocated-to-k-children](https://github.com/Vamship113/Leetcode/tree/master/1335-maximum-candies-allocated-to-k-children) |
 | [1468-check-if-n-and-its-double-exist](https://github.com/Vamship113/Leetcode/tree/master/1468-check-if-n-and-its-double-exist) |
 | [2614-maximum-count-of-positive-integer-and-negative-integer](https://github.com/Vamship113/Leetcode/tree/master/2614-maximum-count-of-positive-integer-and-negative-integer) |
