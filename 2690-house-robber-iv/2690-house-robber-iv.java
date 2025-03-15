@@ -1,31 +1,28 @@
-import java.util.Arrays;
-
 class Solution {
-    private boolean canAssign(int maxVal, int[] nums, int k) {
-        int count = 0;
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] <= maxVal) {
-                count++;
-                i++;
-            }
-        }
-        return count >= k;
-    }
 
     public int minCapability(int[] nums, int k) {
-        int low = Arrays.stream(nums).min().getAsInt();
-        int high = Arrays.stream(nums).max().getAsInt();
-        int ans = 0;
+        // Store the maximum nums value in maxReward.
+        int minReward = 1;
+        int maxReward = Arrays.stream(nums).max().getAsInt();
+        int totalHouses = nums.length;
 
-        while (low <= high) {
-            int mid = low + (high - low) / 2;
-            if (canAssign(mid, nums, k)) {
-                ans = mid;
-                high = mid - 1;
-            } else {
-                low = mid + 1;
+        // Use binary search to find the minimum reward possible.
+        while (minReward < maxReward) {
+            int midReward = (minReward + maxReward) / 2;
+            int possibleThefts = 0;
+
+            for (int index = 0; index < totalHouses; ++index) {
+                if (nums[index] <= midReward) {
+                    possibleThefts += 1;
+                    index++; // Skip the next house to maintain the
+                    // non-adjacent condition
+                }
             }
+
+            if (possibleThefts >= k) maxReward = midReward;
+            else minReward = midReward + 1;
         }
-        return ans;
+
+        return minReward;
     }
 }
