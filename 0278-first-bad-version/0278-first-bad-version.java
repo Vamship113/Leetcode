@@ -11,10 +11,9 @@ public class Solution extends VersionControl {
                 // if((mid==0) || (mid>0 && !isBadVersion(mid-1)))  return mid;
                 // else right=mid-1;
                 right=mid-1;
-                firstVersion=mid;
             }
             else left=mid+1;
         }
-    return firstVersion;
+    return left;
     }
 }
