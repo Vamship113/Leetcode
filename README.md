@@ -160,6 +160,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Binary Search
 |  |
 | ------- |
+| [0278-first-bad-version](https://github.com/Vamship113/Leetcode/tree/master/0278-first-bad-version) |
 | [0907-koko-eating-bananas](https://github.com/Vamship113/Leetcode/tree/master/0907-koko-eating-bananas) |
 | [1335-maximum-candies-allocated-to-k-children](https://github.com/Vamship113/Leetcode/tree/master/1335-maximum-candies-allocated-to-k-children) |
 | [1468-check-if-n-and-its-double-exist](https://github.com/Vamship113/Leetcode/tree/master/1468-check-if-n-and-its-double-exist) |
@@ -481,4 +482,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [1993-sum-of-all-subset-xor-totals](https://github.com/Vamship113/Leetcode/tree/master/1993-sum-of-all-subset-xor-totals) |
 | [2998-count-symmetric-integers](https://github.com/Vamship113/Leetcode/tree/master/2998-count-symmetric-integers) |
 | [3548-find-the-count-of-good-integers](https://github.com/Vamship113/Leetcode/tree/master/3548-find-the-count-of-good-integers) |
+## Interactive
+|  |
+| ------- |
+| [0278-first-bad-version](https://github.com/Vamship113/Leetcode/tree/master/0278-first-bad-version) |
 <!---LeetCode Topics End-->
