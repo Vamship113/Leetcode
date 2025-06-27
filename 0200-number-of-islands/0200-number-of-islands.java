@@ -25,6 +25,10 @@ class Solution {
             int row=q.peek().first;
             int col=q.peek().second;
             q.remove();
+
+            // int[] dRow = {-1, 0, 1, 0};  // row movements: up, right, down, left
+            // int[] dCol = {0, 1, 0, -1};  // col movements: up, right, down, left
+
             int[] offsets = {-1, 0, 1, 0,-1}; // Up right down left
 
             for (int k = 0; k < 4; k++) {
