@@ -12,9 +12,6 @@ class FindSumPairs {
     public void add(int index, int val) {
        int oldValue=nums2[index];
        map.put(oldValue,map.get(oldValue)-1);
-
-       if(map.get(oldValue)==-1) map.remove(oldValue);
-       
        nums2[index]+=val;
        int newValue=nums2[index];
        map.put(newValue,map.getOrDefault(newValue,0)+1);
