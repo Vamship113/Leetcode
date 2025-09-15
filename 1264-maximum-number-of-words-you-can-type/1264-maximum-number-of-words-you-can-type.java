@@ -1,6 +1,6 @@
 class Solution {
     public int canBeTypedWords(String text, String brokenLetters) {
-        int[] arr= new int[27];
+        int[] arr= new int[26];
         for(char c: brokenLetters.toCharArray()){
             arr[c-'a']++;
         }
