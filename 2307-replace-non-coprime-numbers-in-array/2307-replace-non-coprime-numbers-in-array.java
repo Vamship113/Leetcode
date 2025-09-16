@@ -23,12 +23,9 @@ class Solution {
         return stack;
     }
 
-    private int gcd(int a, int b) {
-        while (b != 0) {
-            int tmp = a % b;
-            a = b;
-            b = tmp;
-        }
-        return a;
+    // ✅ your gcd version
+    static int gcd(int a, int b) {
+        if (a == 0) return b;
+        return gcd(b % a, a);
     }
 }
