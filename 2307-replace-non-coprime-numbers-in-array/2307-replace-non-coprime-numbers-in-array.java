@@ -2,61 +2,33 @@ import java.util.*;
 
 class Solution {
     public List<Integer> replaceNonCoprimes(int[] nums) {
-        List<Integer> res = new ArrayList<>();
-        Stack<Integer> stack = new Stack<>();
-        int length = nums.length;
+        List<Integer> stack = new ArrayList<>();
 
-        for (int i = length - 1; i >= 0; i--) {
-            stack.push(nums[i]);
-        }
+        for (int x : nums) {
+            stack.add(x);
 
-        while (!stack.isEmpty()) {
-            int a = stack.pop();
-
-            // if no elements left further → must also merge with res
-            if (stack.isEmpty()) {
-                while (!res.isEmpty()) {
-                    int last = res.get(res.size() - 1);
-                    int g = gcd(last, a);
-                    if (g == 1) break;
-                    res.remove(res.size() - 1);
-                    a = (int)((long)last / g * a);
-                }
-                res.add(a);
-            } else {
-                int b = stack.peek();
-                int GCD = gcd(a, b);
-
-                if (GCD > 1) {
-                    // keep merging on stack side
-                    stack.pop();
-                    a = (int)((long)a / GCD * b);
-                    while (!stack.isEmpty()) {
-                        int top = stack.peek();
-                        int g = gcd(a, top);
-                        if (g == 1) break;
-                        stack.pop();
-                        a = (int)((long)a / g * top);
-                    }
-                    stack.push(a);
-                } else {
-                    // merge with res side
-                    while (!res.isEmpty()) {
-                        int last = res.get(res.size() - 1);
-                        int g = gcd(last, a);
-                        if (g == 1) break;
-                        res.remove(res.size() - 1);
-                        a = (int)((long)last / g * a);
-                    }
-                    res.add(a);
-                }
+            // keep merging while last two are non-coprime
+            while (stack.size() > 1) {
+                int a = stack.get(stack.size() - 2);
+                int b = stack.get(stack.size() - 1);
+                int g = gcd(a, b);
+                if (g == 1) break;
+                stack.remove(stack.size() - 1);
+                stack.remove(stack.size() - 1);
+                long lcm = (long)a / g * b;
+                stack.add((int) lcm);
             }
         }
-        return res;
+
+        return stack;
     }
 
-    static int gcd(int a, int b) {
-        if (a == 0) return b;
-        return gcd(b % a, a);
+    private int gcd(int a, int b) {
+        while (b != 0) {
+            int tmp = a % b;
+            a = b;
+            b = tmp;
+        }
+        return a;
     }
 }
